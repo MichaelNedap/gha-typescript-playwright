@@ -6,10 +6,11 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.platform}}-latest
     strategy:
       matrix:
         browser: [chromium, firefox, webkit]
+        platform: [ubuntu, windows, macos]
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
