@@ -6,13 +6,11 @@ test.describe("Playwright UI Tests", () => {
     await page.goto("https://playwright.dev/");
 
     // Assert
-    await expect(page).toHaveTitle(/grdmjklgrnml/);
-    test
-      .info()
-      .annotations.push({
-        type: "info",
-        description: "✅ Title validation successful (PW).",
-      });
+    await expect(page).toHaveTitle(/Playwright/);
+    test.info().annotations.push({
+      type: "info",
+      description: "✅ Title validation successful (PW).",
+    });
   });
 
   test("Verify search functionality", async ({ page }) => {
@@ -29,12 +27,10 @@ test.describe("Playwright UI Tests", () => {
 
     // Assert
     await expect(page).toHaveURL(/locator/);
-    test
-      .info()
-      .annotations.push({
-        type: "info",
-        description: "✅ Search functionality works.",
-      });
+    test.info().annotations.push({
+      type: "info",
+      description: "✅ Search functionality works.",
+    });
   });
 
   test("Navigation test for API page", async ({ page }) => {
@@ -48,11 +44,9 @@ test.describe("Playwright UI Tests", () => {
 
     // Assert
     await expect(page).toHaveURL(/api/);
-    test
-      .info()
-      .annotations.push({
-        type: "info",
-        description: "✅ Navigation to API page successful.",
-      });
+    test.info().annotations.push({
+      type: "info",
+      description: "✅ Navigation to API page successful.",
+    });
   });
 });
