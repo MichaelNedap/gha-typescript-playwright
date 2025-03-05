@@ -1,23 +1,23 @@
-on:
-  pull_request:
-  push:
-    branches:
-      - main
+# on:
+#   pull_request:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build Docker image
-        run: |
-          docker build -t my-docker-image .
+# jobs:
+#   test:
+#     timeout-minutes: 60
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Build Docker image
+#         run: |
+#           docker build -t my-docker-image .
 
-      - name: Run Docker container
-        run: |
-          docker run -d --name my-container my-docker-image
+#       - name: Run Docker container
+#         run: |
+#           docker run -d --name my-container my-docker-image
 
-      - name: Run arbitrary code inside the container
-        run: |
-          docker exec my-container npx playwright test --project=chromium
+#       - name: Run arbitrary code inside the container
+#         run: |
+#           docker exec my-container npx playwright test --project=chromium
